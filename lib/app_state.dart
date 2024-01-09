@@ -25,7 +25,7 @@ class FFAppState extends ChangeNotifier {
 
   List<GejalaStruct> _listGejala = [
     GejalaStruct.fromSerializableMap(jsonDecode(
-        '{"kodeGejala":"G01","namaGejala":"Anemia","CFPakar":"0.6"}')),
+        '{"kodeGejala":"G01","namaGejala":"Suhu Tubuh Meningkat","CFPakar":"0.6"}')),
     GejalaStruct.fromSerializableMap(jsonDecode(
         '{"kodeGejala":"G02","namaGejala":"Susah Tidur","CFPakar":"0.8"}')),
     GejalaStruct.fromSerializableMap(jsonDecode(

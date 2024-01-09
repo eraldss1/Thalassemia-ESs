@@ -38,6 +38,22 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
     super.dispose();
   }
 
+  String getLabel(double val) {
+    if (val == 0.0) {
+      return "Tidak Pasti";
+    } else if (val == 0.2) {
+      return "Ragu";
+    } else if (val == 0.4) {
+      return "Kurang Pasti";
+    } else if (val == 0.6) {
+      return "Cukup Pasti";
+    } else if (val == 0.8) {
+      return "Hampir Pasti";
+    } else {
+      return "Pasti";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     if (isiOS) {
@@ -147,7 +163,7 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
                             Align(
                               alignment: const AlignmentDirectional(0.00, 0.00),
                               child: Text(
-                                'Anemia',
+                                'Suhu Tubuh Meningkat',
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -169,7 +185,9 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
                                 min: 0.0,
                                 max: 1.0,
                                 value: _model.sliderValue1 ??= 0.0,
-                                label: _model.sliderValue1.toString(),
+                                label: _model.sliderValue1 != null
+                                    ? getLabel(_model.sliderValue1!)
+                                    : "",
                                 divisions: 5,
                                 onChanged: (newValue) {
                                   setState(
@@ -229,7 +247,9 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
                                 min: 0.0,
                                 max: 1.0,
                                 value: _model.sliderValue2 ??= 0.0,
-                                label: _model.sliderValue2.toString(),
+                                label: _model.sliderValue2 != null
+                                    ? getLabel(_model.sliderValue2!)
+                                    : "",
                                 divisions: 5,
                                 onChanged: (newValue) {
                                   setState(
@@ -288,7 +308,9 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
                                 min: 0.0,
                                 max: 1.0,
                                 value: _model.sliderValue3 ??= 0.0,
-                                label: _model.sliderValue3.toString(),
+                                label: _model.sliderValue3 != null
+                                    ? getLabel(_model.sliderValue3!)
+                                    : "",
                                 divisions: 5,
                                 onChanged: (newValue) {
                                   setState(
@@ -347,7 +369,9 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
                                 min: 0.0,
                                 max: 1.0,
                                 value: _model.sliderValue4 ??= 0.0,
-                                label: _model.sliderValue4.toString(),
+                                label: _model.sliderValue4 != null
+                                    ? getLabel(_model.sliderValue4!)
+                                    : "",
                                 divisions: 5,
                                 onChanged: (newValue) {
                                   setState(
@@ -406,7 +430,9 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
                                 min: 0.0,
                                 max: 1.0,
                                 value: _model.sliderValue5 ??= 0.0,
-                                label: _model.sliderValue5.toString(),
+                                label: _model.sliderValue5 != null
+                                    ? getLabel(_model.sliderValue5!)
+                                    : "",
                                 divisions: 5,
                                 onChanged: (newValue) {
                                   setState(
@@ -465,7 +491,9 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
                                 min: 0.0,
                                 max: 1.0,
                                 value: _model.sliderValue6 ??= 0.0,
-                                label: _model.sliderValue6.toString(),
+                                label: _model.sliderValue6 != null
+                                    ? getLabel(_model.sliderValue6!)
+                                    : "",
                                 divisions: 5,
                                 onChanged: (newValue) {
                                   setState(
@@ -524,7 +552,9 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
                                 min: 0.0,
                                 max: 1.0,
                                 value: _model.sliderValue7 ??= 0.0,
-                                label: _model.sliderValue7.toString(),
+                                label: _model.sliderValue7 != null
+                                    ? getLabel(_model.sliderValue7!)
+                                    : "",
                                 divisions: 5,
                                 onChanged: (newValue) {
                                   setState(
@@ -583,7 +613,9 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
                                 min: 0.0,
                                 max: 1.0,
                                 value: _model.sliderValue8 ??= 0.0,
-                                label: _model.sliderValue8.toString(),
+                                label: _model.sliderValue8 != null
+                                    ? getLabel(_model.sliderValue8!)
+                                    : "",
                                 divisions: 5,
                                 onChanged: (newValue) {
                                   setState(
@@ -642,7 +674,9 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
                                 min: 0.0,
                                 max: 1.0,
                                 value: _model.sliderValue9 ??= 0.0,
-                                label: _model.sliderValue9.toString(),
+                                label: _model.sliderValue9 != null
+                                    ? getLabel(_model.sliderValue9!)
+                                    : "",
                                 divisions: 5,
                                 onChanged: (newValue) {
                                   setState(
@@ -701,7 +735,9 @@ class _PeriksaGejalaPageWidgetState extends State<PeriksaGejalaPageWidget> {
                                 min: 0.0,
                                 max: 1.0,
                                 value: _model.sliderValue10 ??= 0.0,
-                                label: _model.sliderValue10.toString(),
+                                label: _model.sliderValue10 != null
+                                    ? getLabel(_model.sliderValue10!)
+                                    : "",
                                 divisions: 5,
                                 onChanged: (newValue) {
                                   setState(
